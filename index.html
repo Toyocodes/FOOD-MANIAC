@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    
+    <link rel="stylesheet" href="food.css">
+    
+    
+</head>
+<body onload="slider()"> 
+    
+    <header>
+        <h4 class="logo"><i class="fas fa-utensils"></i>Foodies</h4>
+    
+        <nav class="navbar" id="navbar">
+            <i class="fas fa-times" onclick="closeMenu()"></i>
+            <a href="#home">Home</a>
+            <a href="#specials">Breakfast</a>
+            <a href="#popular">Popular</a>
+            <a href="#pastery">Pastery</a>
+            <a href="#drinks">Drinks</a>
+            <a href="#review">Review</a>
+            <a href="#contact">Contact</a> 
+        </nav>
+        <div>
+           <!-- <a href=""></a> -->
+           
+            <div class="icons">
+                <a href="login.html"><i class="fa fa-user" id="user-icon"></i></a>
+                <i class="fa fa-cart-plus" id="cart-icon" onclick="addToCart()"></i>
+                <!-- <div id="cartAmount" class="cartAmount">0</div> -->
+            </div>
+            
+            <!-- cart section -->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <!-- cart content -->
+                <div class="cart-content">
+
+                    <!-- <div class="cart-box">
+                        <img src="images/d-s-strawberry.png" alt="" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-product-title">Strawberry Smoothie</div>
+                            <div class="cart-price">$25.04</div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                         
+                        <i class="fa-solid fa-trash-can cart-remove"></i>
+                    </div> -->
+                   
+                </div>
+
+                <!-- Total -->
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <!-- Buy Button -->
+                    <button type="button" class="btn-buy">Buy Now</button>
+                    <!-- cart close -->
+                    <i class="fa-solid fa-x" id="close-cart"></i>
+            </div>
+                
+        </div>
+        
+
+        <div id="menubar">  
+            <i class="fas fa-bars"></i>
+        </div>
+
+    </header>
+   
+
+     <!-- home begins -->
+
+     <section id="home" class="home">
+        <div class="home-content" data-aos="slide-up">
+            <h3>Need Something Yummy? We are always at your service...</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vem amet laudantium animi optio voluptatum. Natus itaque impedit incidunt rem quisquam eos!</p>
+            <a href="#" class="home-btn" id="home-btn">order now</a>
+        </div>
+        <div class="home-image-slider">
+            <img src="images/home-img.png" alt="" id="slideImg">
+        </div>
+   
+     </section>
+     <!-- home ends -->
+
+     <!-- specials begins -->
+     <section id="specials" class="specials" >
+
+        <h1 class="menu-title"> Breakfast <span>Menu</span> </h1>
+
+        <div class="box-container">
+            <div class="box product-box">
+                
+                <img src="images/b-pancakes.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Pancakes</h4>
+                    <span class="price">$50</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn" data-product="Pancakes">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/b-sandwich.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Sandwiches</h4>
+                    <span class="price">$150</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn" data-product="Sandwich">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/b-omelet.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Omelet</h4>
+                    <span class="price">$216</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn" data-product="Omelet & Bread">order now</button> 
+            </div>
+
+            <div class="box product-box">
+               
+                <img src="images/b-oatmeal.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Oatmeal</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn" data-product="Oatmeal">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/b-latte.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Latte</h4>
+                    <span class="price">$25</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn" data-product="Latte">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/b-blackcoffee.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Black Coffee</h4>
+                    <span class="price">$30</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn" data-product="Black Coffee">order now</button> 
+            </div>
+
+        </div>
+
+     </section>
+     <!-- specials ends -->
+
+
+     <!-- ABout begins -->
+    <section id="about" class="about">
+        
+        <h1 class="menu-title"> Why Choose<span> Us</span></h1>
+        
+        <div class="about-container">
+    
+            <div class="about-image">
+                <img src="images/thechef.png" alt="">
+            </div>
+            <div class="about-content">
+                <h3 class="mini-heading">Services</h3>
+                <h2>We Serve Best Quality Meal <br> At all times</h2>
+                <div class="content-flex 1">
+                    <div class="content-image">
+                        <img src="images/food-icon.png" alt="">
+                    </div> 
+                    <div class="content">
+                        <h3>Healthy Food</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Est, maxime rem. Itaque.</p>
+                    </div>
+                </div>
+
+                <div class="content-flex 2">
+                    <div class="content-image">
+                        <img src="images/price-icon.png" alt="">
+                    </div> 
+                    <div class="content">
+                        <h3>Affordable Price</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Est, maxime rem. Itaque.</p>
+                    </div>
+                </div>
+
+                <div class="content-flex 3">
+                    <div class="content-image">
+                        <img src="images/delivery-icon.png" alt="">
+                    </div> 
+                    <div class="content">
+                        <h3>Fast Delivery</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Est, maxime rem. Itaque.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- About section ends -->
+
+     <!-- most popular section begins -->
+     <section id="popular" class="popular">
+
+        <h1 class="menu-title"> Our Hot<span> Popular</span> Meal</h1>
+
+        <div class="box-container">
+            <div class="box product-box">
+                
+                <img src="images/po-burger-1.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Burger</h4>
+                    <span class="price">$76</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+               
+                <img src="images/po-pizza.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Pizza</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/po-chicken-nugget.jpeg" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Chicken Nuggets</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/po-pasta-bolognese.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Pasta</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/po-chicken-chips.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Chicken & Chips</h4>
+                    <span class="price">$100</span> 
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/po-sharwama.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Sharwama</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <!-- <div class="box">
+                
+                <img src="images/po-chicken-wings.jpg" alt="">
+                <div class="box-price">
+                    <h4>Chicken wings</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="" class="btn" id="btn">order now</a> 
+            </div> -->
+
+            <div class="box">
+                
+                <img src="images/po-friedrice.png" alt="">
+                <div class="box-price">
+                    <h4>Fried rice</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <!-- <div class="box">
+               
+                <img src="images/po-chips.webp" alt="">
+                <div class="box-price">
+                    <h4>Chips with sauce</h4>
+                    <span class="price">$50</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="" class="btn" id="btn">order now</a> 
+            </div> -->
+
+        </div>
+
+     </section> 
+     <!-- most popular section ends -->
+
+     <!-- pastery section begins -->
+     <section id="pastery" class="pastery">
+
+        <h1 class="menu-title"> Sweet <span>Pastery</span> </h1>
+
+        <div class="box-container">
+            <div class="box product-box">
+                
+                <img src="images/p-cake-choco.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Chocolate Cupcake</h4>
+                    <span class="price">$15</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/p-cake-vanilla.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Vanilla cake</h4>
+                    <span class="price">$12</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/p-donut.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Donut</h4>
+                    <span class="price">$10</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/p-macaron.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Macarons</h4>
+                    <span class="price">$35</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <!-- <div class="box">
+               
+                <img src="images/p-brownie.jpg" alt="">
+                <div class="box-price">
+                    <h4>Brownie</h4>
+                    <span class="price">$40</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn" id="btn">order now</a> 
+            </div> -->
+
+            <div class="box product-box">
+               
+                <img src="images/p-bread.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Banana bread</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+        </div>
+
+     </section>
+     <!-- pastery ends  -->
+
+     <!-- drinks section begins -->
+     <section id="drinks" class="drinks">
+
+        <h1 class="menu-title"><span>Drinks</span> & More</h1>
+
+        <div class="box-container">
+            <div class="box product-box">
+                
+                <img src="images/d-juice.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Fruit juice</h4>
+                    <span class="price">$25</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+               
+                <img src="images/d-cocktail.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Cocktail</h4>
+                    <span class="price">$32</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</a> 
+            </div>
+
+            <div class="box product-box ">
+               
+                <img src="images/d-icecream.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Ice cream</h4>
+                    <span class="price">$50</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/d-popsicle.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Popsicle</h4>
+                    <span class="price">$100</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/d-s-choco.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Chocolate Smoothie</h4>
+                    <span class="price">$99</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+            <div class="box product-box">
+                
+                <img src="images/d-s-strawberry.png" alt="" class="product-img">
+                <div class="box-price">
+                    <h4 class="product-title">Strawberry Ice-cream</h4>
+                    <span class="price">$99</span>
+                </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <button class="btn add-to-cart" id="btn">order now</button> 
+            </div>
+
+        </div>
+
+     </section>
+     <!-- drinks ends -->
+
+     <!-- customers Review begins -->
+
+     <section class="review" id="review" >
+
+        <h1 class="menu-title"> Our Happy<span> Client</span> </h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <div class="review-img">
+                    <img src="images/pic1.png" alt="">
+                </div>
+                <h3>Jessica Wales</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
+                <div class="r-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="review-img">
+                    <img src="images/pic2.png" alt="">
+                </div>
+                <h3>John Brand</h3>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus, ducimus facere quod ratione vel laboriosam? Est, maxime rem. Itaque.</p>
+                <div class="r-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+           
+    
+        </div>
+    
+    </section> 
+    
+     <!-- customers Review ends -->
+
+    <!-- how to order -->
+    <!-- <section class="order" id="order">
+        <h1 class="menu-title"> How to<span>Order </span>?</h1>
+        
+    </section> -->
+
+     <!-- order section begins -->
+
+     <!-- <section class="order" id="order">
+
+        <h1 class="menu-title"> What would you like to <span>Order </span>?</h1>
+    
+        <div class="row">
+    
+            <form onsubmit="sendEmail(); reset(); return false;">
+    
+                <div class="inputBox">
+                    <input type="text" placeholder="Full Name" id="name">
+                    <input type="email" placeholder="E-mail Address" id="email">
+                </div>
+    
+                <div class="inputBox">
+                    <input type="number" placeholder="Phone Number" id="phone">
+                    <input type="text" placeholder="What food would you like to order?" id="food">
+                </div>
+    
+                <textarea id="address" placeholder="Delivery Address" cols="30" rows="10"></textarea>
+    
+                <input type="submit" value="order now" class="order-form-btn">
+    
+            </form>
+    
+        </div>
+    
+    </section> -->
+
+     <!-- order section ends -->
+     
+
+    <!-- faq section begins -->
+    
+        <section class="faq" id="faq">
+            <h1 class="faq-heading">Frequently Asked Questions</h1>
+
+            <div class="faq-container" data-aos="slide-up">
+
+                <div class="each-faq">
+    
+                    <h1 class="faq-question">How can I place an order?</h1>
+    
+                    <div class="faq-answer">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium architecto corporis dolore. Asperiores, expedita doloribus? </p>
+                    </div>
+
+                </div>
+                <hr class="hr-line">
+    
+                <div class="each-faq">
+    
+                    <h1 class="faq-question">How long will it take for me to get my order?</h1>
+    
+                    <div class="faq-answer">
+                        <p>Orders are shipped out immediately payments are made. Customers will receive their food within 45 minutes</p>
+                    </div>
+                </div>
+                <hr class="hr-line">
+    
+    
+                <div class="each-faq">
+    
+                    <h1 class="faq-question">Do I get a coupon code during the discount promo?</h1>
+
+                    <div class="faq-answer">
+                        <p>Yes, coupon code would be sent via email</p>
+                    </div>
+
+                </div>
+                <hr class="hr-line">
+            
+                <div class="each-faq">
+    
+                    <h1 class="faq-question">Do you only offer your services in Lagos?</h1>
+    
+                    <div class="faq-answer">
+                        <p>Yes, but we are currently working on opening new outlets outside Lagos.</p>
+                    </div>
+
+                </div>
+                <hr class="hr-line">
+    
+                <div class="each-faq">
+                    <h1 class="faq-question">Do you still offer buy one get one free on all order?</h1>
+    
+                    <div class="faq-answer">
+                        <p>No, the promo is over. You can check out other promo deals we have</p>
+                    </div>
+
+                </div>
+    
+            </div>
+        </section>
+        <!-- faq section ends -->
+
+     <!-- contact section begins -->
+
+     <section class="contact" id="contact" data-aos="slide-up">
+
+        <h1 class="menu-title"> Our <span>Contact</span> </h1>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15853.047321431497!2d3.3581327!3d6.6143564!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3ae060fb3436c3ad!2sIkeja%20City%20Mall!5e0!3m2!1sen!2sng!4v1655920006995!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" 
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+    </section>
+
+     <!-- contact section ends -->
+
+    <section>
+        
+        <div class="newsletter">
+            <div class="newsletter-heading">
+                <h2>Subscribe to our newsletter today!</h2>
+            </div>
+            <div class="newsletter-form" onsubmit="sendEmail()">
+                
+                <div class="city">
+                
+                    <!-- <select id="states" name="Select your city"> -->
+                    <select id="states" name="states">
+                    <option value="abia">Select your city</option>
+                    <option value="abia">Abia</option>
+                    <option value="adamawa">Adamawa</option>
+                    <option value="anambra">Anambra</option>
+                    <option value="bauchi">Bauchi</option>
+                    <option value="benue">Benue</option>
+                    <option value="borno">Borno</option>
+                    <option value="crossriver">Crossriver</option>
+                    <option value="delta">Delta</option>
+                    <option value="edo">Edo</option>
+                    <option value="ebonyi">Ebonyi</option>
+                    <option value="enugu">Enugu</option>
+                    <option value="imo">Imo</option>
+                    <option value="jigawa">Jigawa</option>
+                    <option value="kano">Kano</option>
+                    <option value="kaduna">Kaduna</option>
+                    <option value="kebbi">Kebbi</option>
+                    <option value="kogi">Kogi</option>
+                    <option value="kwara">Kwara</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="niger">Niger</option>
+                    </select> 
+                </div>
+
+                <div class="newsletter-input">
+                    
+                    <input type="email" id="email" name="email" placeholder="E-mail">
+                </div>
+
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+
+            </div>
+        </div>
+    </section>
+
+
+    
+     <!-- footer section begins -->
+
+    <footer>
+    <div class="footer-row">
+        <div class="footer-col">
+            <h6 class="list-title">Breakfast Specials</h6>
+            <ul>
+                <li>Pancakes</li>
+                <li>Sandwich</li>
+                <li>Omelet & Bread</li>
+                <li>Oat meal</li>
+                <li>Latte</li>
+                <li>Black Coffee</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h6 class="list-title">Popular Meal</h6>
+            <ul>
+                <li>Burger</li>
+                <li>Pasta</li>
+                <li>Chicken with chips</li>
+                <li>pizza</li>
+                <li>Chicken Nugget</li>
+                <li>Sharwama</li>
+                <li>Fried Rice </li>
+                <li>Chicken Wings</li>
+                <li>Chips with Sauce</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h6 class="list-title">Pastery</h6>
+            <ul>
+                <li>Brownie</li>
+                <li>Chocolate Cupcake</li>
+                <li>Vanilla Cupcake</li>
+                <li>Macarons</li>
+                <li>Donut</li>
+                <li>Fruit Bread</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h6 class="list-title">Drinks</h6>
+            <ul>
+                <li>Fruit Juice</li>
+                <li>Cocktail</li>
+                <li>Popsicle</li>
+                <li>Ice Cream</li>
+                <li>Chocolate Smoothie</li>
+                <li>Strawberry Smoothie</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="socials">
+        <!-- <p>Connect</p> -->
+        <li><a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a href="http://www.twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="http://www.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+    </div>
+
+        
+        <div class="footer-name">
+    <p>Foodies. &copy; 2023 <br> </p>
+        </div>
+
+
+    
+    </footer>
+
+     <!-- footer section ends -->
+
+     <a href="#home" id="scroll-top"></a>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="cart.js"></script>
+    <script src="food.js"></script>
+    
+</body>
+</html>

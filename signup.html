@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="food.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <!-- header section starts -->
+    <header>
+        <h4 class="logo"><i class="fas fa-utensils"></i>betaChop</h4>
+    
+        <nav class="navbar" id="navbar">
+            <i class="fas fa-times" onclick="closeMenu()"></i>
+            <a href="index.html">Home</a>
+            <a href="index.html">Specials</a>
+            <a href="index.html">Popular</a>
+            <a href="index.html">Pastery</a>
+            <a href="index.html">Drinks</a>
+            <a href="index.html">Review</a>
+            <a href="index.html">Order</a>
+            <a href="index.html">Contact</a>
+        </nav>
+        <div>
+           <!-- <a href=""></a> -->
+            <a href="login.html"><i class="fa fa-user" id="user-icon"></i></a>
+            <i class="fa fa-cart-plus" id="cart-icon" onclick="addToCart()"></i>
+        </div>
+
+        <div id="menubar">  
+            <i class="fas fa-bars"></i>
+        </div>
+
+        
+
+    </header>
+    
+     <!-- header section ends-->
+
+
+
+    <div id="signUpForm" class="signUpForm">
+        <div class="form-title" style="background-color: black; color: #fff; border-radius: 0.6rem; padding: 1.5rem ; 
+      margin: 20px;" >
+            Sign Up
+    </div>
+
+    <form action="">
+        <div class="form-order">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="First name" >
+        </div>
+
+        <div class="form-order">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="Last name" > 
+        </div>
+
+        <div class="form-order">
+            <label for="email">E-mail Address</label>
+            <input type="text" id="fname" name="email"> 
+        </div>
+
+        <div class="form-order">
+            <label for="psw">Password</label>
+            <input type="password" id="psw" name="psw" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" 
+            title= "Must contain at least one uppercase, a lowercase, at least 8 characters, a digit" required> <br>
+        </div>
+
+        <button id="signUp-btn">Sign up</button> 
+        
+
+        
+    </form>
+    </div>
+
+
+    <script src="food.js"></script> 
+</body>
+</html>
