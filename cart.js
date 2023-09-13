@@ -56,6 +56,9 @@ function buyButtonClicked(){
         cartContent.removeChild(cartContent.firstChild)
     }
     updatetotal();
+    setTimeout(function () {
+        location.reload();
+    }, 500);
 }
 
 //Remove items from cart step3
@@ -83,7 +86,6 @@ function addCartClicked(event) {
     var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
     
     button.innerHTML= 'Added to cart'
-    alert('Order added to cart');
     addProductToCart(title, price, productImg);
     updatetotal();
 }
