@@ -50,7 +50,6 @@ function ready () {
 
 //step8b buybtn function
 function buyButtonClicked(){
-    alert('Your Order has been placed')
     var cartContent = document.getElementsByClassName('cart-content')[0]
     while(cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild)
@@ -84,6 +83,7 @@ function addCartClicked(event) {
     var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
     
     button.innerHTML= 'Added to cart'
+    alert('Your Order has been placed')
     addProductToCart(title, price, productImg);
     updatetotal();
 }
