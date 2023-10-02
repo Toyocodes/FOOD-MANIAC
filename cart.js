@@ -1,7 +1,7 @@
 let cartIcon = document.querySelector('#cart-icon')
 let cart = document.querySelector('.cart')
 let closeCart = document.querySelector('#close-cart')
-let cartAmount = document.querySelector('#cart-amount')
+let cartAmount = document.querySelector('#cartAmount')
 
 
 cartIcon.onclick = () =>{
@@ -129,25 +129,29 @@ function addProductToCart(title, price, productImg) {
 
 
 //update Total step3a
-function updatetotal(){
-    var cartContent = document.getElementsByClassName('cart-content')[0]
-    var cartBoxes = cartContent.getElementsByClassName('cart-box')
-    var total = 0;  
-  
-    for(var i=0; i < cartBoxes.length; i++){
-        var cartBox = cartBoxes[i]
-        var priceElement = cartBox.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0]
+function updatetotal() {
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    var cartBoxes = cartContent.getElementsByClassName('cart-box');
+    var total = 0;
+    var itemCount = 0; // Initialize itemCount
+
+    for (var i = 0; i < cartBoxes.length; i++) {
+        var cartBox = cartBoxes[i];
+        var priceElement = cartBox.getElementsByClassName('cart-price')[0];
+        var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
         var price = parseFloat(priceElement.innerText.replace("$", ""));
         var quantity = quantityElement.value;
-        
-        total = total + (price * quantity);
-        
-    }
-        //if price contain some cents value step 3b
-        total = Math.round(total * 100)/100;
-        
-        document.getElementsByClassName('total-price')[0].innerText = '$' + total;
 
-        
+        total = total + (price * quantity);
+        itemCount += parseInt(quantity); // Increment itemCount by quantity
+    }
+
+    // Update the cartAmount element with itemCount
+    cartAmount.innerText = itemCount;
+
+    // If price contains some cents value step 3b
+    total = Math.round(total * 100) / 100;
+
+    document.getElementsByClassName('total-price')[0].innerText = '$' + total;
 }
+
